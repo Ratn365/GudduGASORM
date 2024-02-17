@@ -8,7 +8,6 @@ const GoSpreadsheet = function (key) {
 
 GoSpreadsheet.prototype.sheet = function (name, options) {
   if (!options) options = {};
-  options.cache = !!options.cache;
 
   if (!this.worksheets[name]) {
     var worksheet = this.spreadsheet.getSheetByName(name);
@@ -101,7 +100,7 @@ GoSpreadsheet.prototype.moveFileToFolder = function (folderId) {
   try {
     // Move the file to the folder
     file.moveTo(folder);
-   // folder.createFile(file.getBlob());
+    // folder.createFile(file.getBlob());
     file.setTrashed(true);
 
     Logger.log('File moved successfully!');

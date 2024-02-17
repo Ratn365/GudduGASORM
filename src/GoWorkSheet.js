@@ -2,6 +2,7 @@
 //options {cache,headerCellAddress, or dataRange}
 const GoWorksheet = function (spreadsheet, options) {
   if (!options) options = {};
+  options.cache = !!options.cache;
   this.spreadsheet = spreadsheet;
   this.worksheet = options.worksheet;
 
